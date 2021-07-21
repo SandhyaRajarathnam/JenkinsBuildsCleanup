@@ -2,7 +2,7 @@ import jenkins.model.Jenkins
 import hudson.model.Job
 
 BUILDS_TO_KEEP = 0
-    def tenDaysAgo=new Date() -0
+    def tenDaysAgo=new Date() -10
     Jenkins.instance.getAllItems(Job.class).each { job->
     println job.name
     def recent=job.builds.limit(BUILDS_TO_KEEP)
